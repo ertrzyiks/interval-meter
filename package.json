@@ -2,9 +2,11 @@
   "name": "interval-meter",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ertrzyiks.github.io/interval-meter/",
   "dependencies": {
     "@material-ui/core": "^4.2.1",
     "date-fns": "^1.30.1",
+    "gh-pages": "^2.0.1",
     "react": "^16.8.6",
     "react-animate-mount": "^1.0.1",
     "react-dom": "^16.8.6",
@@ -14,7 +16,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
