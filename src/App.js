@@ -81,11 +81,13 @@ function App({initialState}) {
                   </ListItemIcon>
                   <ListItemText primary={formatTime(now)} secondary={elapsedTime && formatElapsedTime(elapsedTime)} />
 
-                  <ListItemSecondaryAction>
-                    <IconButton edge="end" aria-label="Comments" onClick={() => setToDelete(id)}>
-                      <Delete />
-                    </IconButton>
-                  </ListItemSecondaryAction>
+                  { elapsedTime && elapsedTime < 60 * 60 * 1000 &&
+                    <ListItemSecondaryAction>
+                      <IconButton edge="end" aria-label="Comments" onClick={() => setToDelete(id)}>
+                        <Delete/>
+                      </IconButton>
+                    </ListItemSecondaryAction>
+                  }
                 </ListItem>
               )}
               </AnimateGroup>
