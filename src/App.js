@@ -12,7 +12,7 @@ import './App.css';
 function formatElapsedTime(ms) {
   const s = ms / 1000
 
-  const min = s < 60
+  const min = s / 60
   if (min < 1) {
     return '< 1min'
   }
