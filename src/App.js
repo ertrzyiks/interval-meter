@@ -3,6 +3,9 @@ import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import OfflineBolt from '@material-ui/icons/OfflineBolt';
+import Done from '@material-ui/icons/Done';
 import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
 import { AnimateGroup } from 'react-animate-mount'
@@ -61,6 +64,9 @@ function App({initialState}) {
               <AnimateGroup>
               {state.map(({now, elapsedTime, id}) =>
                 <ListItem key={id}>
+                  <ListItemIcon>
+                    { elapsedTime < 10 * 60 * 1000 ? <OfflineBolt /> : <Done />}
+                  </ListItemIcon>
                   <ListItemText primary={formatTime(now)} secondary={elapsedTime && formatElapsedTime(elapsedTime)} />
                 </ListItem>
               )}
