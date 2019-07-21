@@ -65,7 +65,7 @@ function App({initialState}) {
               {state.map(({now, elapsedTime, id}) =>
                 <ListItem key={id}>
                   <ListItemIcon>
-                    { elapsedTime < 10 * 60 * 1000 ? <OfflineBolt /> : <Done />}
+                    { elapsedTime && elapsedTime < 10 * 60 * 1000 ? <OfflineBolt /> : <Done />}
                   </ListItemIcon>
                   <ListItemText primary={formatTime(now)} secondary={elapsedTime && formatElapsedTime(elapsedTime)} />
                 </ListItem>
